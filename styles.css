@@ -2,13 +2,20 @@ body {
   text-align: center;
   background-color: #011F3F;
 }
+h2{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  margin:  5%;
+  color: #FEF2BF;
 
+}
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
   color: #FEF2BF;
 }
+
 
 .container {
   display: block;
@@ -18,7 +25,7 @@ body {
 }
 
 .btn {
-  margin: 25px;
+  margin: 5%;
   display: inline-block;
   height: 200px;
   width: 200px;
