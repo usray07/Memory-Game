@@ -1,9 +1,12 @@
-alert('Remember the sequence and play pattern from beginning each time');
 var buttonColours = ['green','red','yellow','blue'];
 var gamePattern = [];
 var userClicks = [];
 var level = 0;
-
+var maxscore = [];
+$('#start').hover(function(){
+    $(this).fadeOut();
+    $(this).fadeIn();
+})
 function nextSequence(){
     
     $("h1").text('Level '+ level);
@@ -31,19 +34,30 @@ function animateClick(c){
     nsound.play();
 }
 function clicks(){
+    
     var userChosenColour = this.id;
     animateClick(userChosenColour);
     userClicks.push(userChosenColour);
     checkAnswer(userClicks.length);
 }
 
-$('.btn').click(clicks);    
+$('.play').click(clicks);    
 
 $(document).keypress(function(){
+    $("#start").hide();
+    $("#or").hide();
     setTimeout(function(){
         nextSequence();
     },200);
 });
+$('#start').click(function(){
+    $(this).hide();
+    $("#or").hide();
+    setTimeout(function(){
+        nextSequence();
+    },200);
+});
+
 
 function checkAnswer(currLevel){
     if (userClicks[currLevel-1]===gamePattern[currLevel-1]){
@@ -61,13 +75,19 @@ function checkAnswer(currLevel){
         var wrong = new Audio('wrong.mp3');
         wrong.play();
         $('body').addClass('game-over');
+        maxscore.push(level-1);
         setTimeout(function(){
-        $('body').removeClass('game-over');
-        $("h1").text('Game Over, Press Any Key to Restart')
-        level=0;
-        gamePattern=[];
-        userClicks = [];
+            $('body').removeClass('game-over');
+            $("h1").text('Game Over, Press Any Key to Restart')
+            $("#start").text('Click to Restart');
+            $("#or").show();
+            $("#start").show();
+            level=0;
+            gamePattern=[];
+            userClicks = [];
 
-    },200); 
+        },200); 
+        var cmax = Math.max.apply(Math,maxscore); 
+        $("#maxScore").text('Max Score: '+cmax);
     }
 }
