@@ -1,4 +1,4 @@
-alert('You can press any key to start and it will show you a tile that you have to click on. You have to remember the sequence and at each level you have to start from brginning of sequence');
+alert('You can press any key to start and it will show you a tile that you have to click on. You have to remember the sequence till each level you have to start from beginning of sequence');
 var buttonColours = ['green','red','yellow','blue'];
 var gamePattern = [];
 var userClicks = [];
