@@ -18,7 +18,7 @@ function nextSequence(){
 
 function animate(c){
     $('#'+c).fadeOut(100).fadeIn(100);
-    var sound = new Audio('F:\\Courses\\Web Development\\Simon Game Challenge Starting Files\\sounds\\'+c+'.mp3');
+    var sound = new Audio(c+'.mp3');
     sound.play();
 }
 function animateClick(c){
@@ -27,7 +27,7 @@ function animateClick(c){
         $('#'+c).removeClass('pressed');
 
     },100); 
-    var nsound = new Audio('F:\\Courses\\Web Development\\Simon Game Challenge Starting Files\\sounds\\'+c+'.mp3');
+    var nsound = new Audio(c+'.mp3');
     nsound.play();
 }
 function clicks(){
@@ -70,7 +70,7 @@ function checkAnswer(currLevel){
     }
     else{
         // console.log('wrong');
-        var wrong = new Audio('F:\\Courses\\Web Development\\Simon Game Challenge Starting Files\\sounds\\wrong.mp3');
+        var wrong = new Audio(wrong.mp3');
         wrong.play();
         $('body').addClass('game-over');
         maxscore.push(level-1);
