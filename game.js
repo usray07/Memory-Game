@@ -70,7 +70,7 @@ function checkAnswer(currLevel){
     }
     else{
         // console.log('wrong');
-        var wrong = new Audio(wrong.mp3');
+        var wrong = new Audio('wrong.mp3');
         wrong.play();
         $('body').addClass('game-over');
         maxscore.push(level-1);
