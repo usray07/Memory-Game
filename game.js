@@ -1,4 +1,4 @@
-alert('You can press any key to start and it will show you a tile that you have to click on. And as you go from level to level, the patterns get more and more complicated');
+alert('You can press any key to start and it will show you a tile that you have to click on. You have to remember the sequence and at each level you have to start from brginning of sequence');
 var buttonColours = ['green','red','yellow','blue'];
 var gamePattern = [];
 var userClicks = [];
